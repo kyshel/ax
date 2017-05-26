@@ -35,6 +35,8 @@
 	
 </div>
 <script type="text/javascript">
+	
+	var REPO_LINK = 'https://github.com/kyshel/ax';
 
 	var file=getParameterByName('file');
 	var about = document.getElementById('about');
@@ -45,8 +47,10 @@
 	
 	if(file){
 		readTextFile(file);
-		nav_a.innerHTML = '<a href="." style="float:left;"><h4> <-Back to Home </h4></a><a href="http://kyshel.me" style="float:right;"><h4> Kyshel </h4></a><div style="clear:both;"></div>';
-		nav_b.innerHTML = '<a href="." style="float:left;"><h4> <-Back to Home </h4></a><a href="http://kyshel.me" style="float:right;"><h4> Kyshel </h4></a>';
+		var edit_link = '<a href="'+REPO_LINK+'/edit/master/"'+file+' style="float:left;"><h4> Edit </h4></a>';
+		var nav_left =  '<a href="." style="float:left;"><h4> <-Back to Home </h4></a>'+edit_link+'<a href="http://kyshel.me" style="float:right;"><h4> Kyshel </h4></a>';
+		nav_a.innerHTML = nav_left + '<div style="clear:both;"></div>';
+		nav_b.innerHTML = nav_left;
 	}else{
 		readTextFile("README.md");
 		
