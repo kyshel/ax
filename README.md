@@ -1,4 +1,4 @@
 # ax
 
-- [$.md](http://kyshel.me/config/?file=jquery.md)
+- [$.md](./?file=jquery.md)
 
