@@ -1,0 +1,97 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.4.3/showdown.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.0/github-markdown.min.css">
+	<style type="text/css">
+		body{
+			background: #f5f5f5;
+		}
+		#wrap{
+			width: 700px;
+			margin: 40px auto;
+			background: #ffffff;
+    			padding: 30px 60px;
+		}
+		#about{
+			width: 820px;
+			margin: -40px auto;
+		}
+		.about_link{
+			margin-left:15px;
+		}
+	</style>
+</head>
+<body>
+	
+<div id="wrap"  class="markdown-body">
+	<div id="nav_a"></div>
+	<div id="show"></div>
+	<div id="nav_b"></div>
+</div>
+	
+<div id="about" class="markdown-body">
+	
+</div>
+<script type="text/javascript">
+
+	var file=getParameterByName('file');
+	var about = document.getElementById('about');
+	var nav_a = document.getElementById('nav_a');
+	var nav_b = document.getElementById('nav_b');
+	var parts = window.location.href.split('/');
+	var lastSegment = parts.pop() || parts.pop(); 
+	
+	if(file){
+		readTextFile(file);
+		nav_a.innerHTML = '<a href="." style="float:left;"><h4> <-Back to Home </h4></a><a href="http://kyshel.me" style="float:right;"><h4> Kyshel </h4></a><div style="clear:both;"></div>';
+		nav_b.innerHTML = '<a href="." style="float:left;"><h4> <-Back to Home </h4></a><a href="http://kyshel.me" style="float:right;"><h4> Kyshel </h4></a>';
+	}else{
+		readTextFile("README.md");
+		
+		about.innerHTML = '<a href="http://github.com/kyshel/'+ lastSegment +'" style="float:left;"><h4>This Repo</h4></a>';
+		about.innerHTML += '<a href="http://kyshel.me" class="about_link" style="float:right;"><h4>Blog</h4>';
+		about.innerHTML += '<a href="https://github.com/kyshel" class="about_link" style="float:right;"><h4>GitHub</h4></a><div style="clear:both;"></div>';
+	}
+	
+
+	
+	
+
+	
+function readTextFile(file)
+{
+	var rawFile = new XMLHttpRequest();
+	rawFile.open("GET", file, false);
+	rawFile.onreadystatechange = function ()
+	{
+		if(rawFile.readyState === 4)
+		{
+			if(rawFile.status === 200 || rawFile.status == 0)
+			{
+				var allText = rawFile.responseText;
+				//below is showdown work
+				var converter = new showdown.Converter(),
+				text      = allText,
+				html      = converter.makeHtml(text);
+				document.getElementById('show').innerHTML=html;
+			}
+		}
+	}
+	rawFile.send(null);
+}
+	
+function getParameterByName(name, url) {
+	if (!url) url = window.location.href;
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+</script>
+
+</body></html>
