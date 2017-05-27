@@ -42,7 +42,7 @@
 	var REPO_LINK = 'https://github.com/kyshel/ax';
 	var INDEX_MD = 'ax.md';
 
-	var file=getParameterByName('file');
+	var file=getParameterByName('f');
 	var about = document.getElementById('about');
 	var nav_a = document.getElementById('nav_a');
 	var nav_b = document.getElementById('nav_b');
@@ -51,16 +51,16 @@
 	
 	if(file){
 		readTextFile(file);
-		var edit_link = ' <a href="'+REPO_LINK+'/edit/master/'+file+'" style="float:left;margin-left: 10px;"><h4> Edit </h4></a>';
-		var nav_left =  '<a href="." style="float:left;"><h4> <-Back to Home </h4></a>'+edit_link+'<a href="http://kyshel.me" style="float:right;"><h4> Kyshel </h4></a>';
-		nav_a.innerHTML = nav_left + '<div style="clear:both;"></div>';
-		nav_b.innerHTML = nav_left ;
+		var edit_link = ' <a href="'+REPO_LINK+'/edit/master/'+file+'" style="float:left;"><h4> Edit </h4></a>';
+		var nav_bar =  edit_link+ '<a href="." class="about_link" style="float:right;"><h4> <-Back to Home </h4></a><a href="http://kyshel.me" class="about_link" style="float:right;"><h4> Kyshel </h4></a>';
+		nav_a.innerHTML = nav_bar + '<div style="clear:both;"></div>';
+		nav_b.innerHTML = nav_bar ;
 	}else{
 		readTextFile(INDEX_MD);
-		var edit_link = ' <a href="'+REPO_LINK+'/edit/master/'+INDEX_MD+'" style="float:left;margin-left: 10px;"><h4> Edit </h4></a>';
+		var edit_link = ' <a href="'+REPO_LINK+'/edit/master/'+INDEX_MD+'" style="float:left;"><h4> Edit </h4></a>';
 		
-		about.innerHTML = '<a href="http://github.com/kyshel/'+ lastSegment +'" style="float:left;"><h4>This Repo</h4></a>';
-		about.innerHTML += edit_link;
+		about.innerHTML = edit_link;
+		about.innerHTML += '<a href="http://github.com/kyshel/'+ lastSegment +'" class="about_link" style="float:right;"><h4>This Repo</h4></a>';
 		about.innerHTML += '<a href="http://kyshel.me" class="about_link" style="float:right;"><h4>Blog</h4>';
 		about.innerHTML += '<a href="https://github.com/kyshel" class="about_link" style="float:right;"><h4>GitHub</h4></a><div style="clear:both;"></div>';
 	}
