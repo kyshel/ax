@@ -1,5 +1,4 @@
-# ax
+# AX
 
-- [$.md](./?file=jquery.md)
-- [css.md](./?file=css.md)
+Private repo.
 
