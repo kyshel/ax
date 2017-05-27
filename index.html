@@ -37,6 +37,7 @@
 <script type="text/javascript">
 	
 	var REPO_LINK = 'https://github.com/kyshel/ax';
+	var INDEX_MD = 'ax.md';
 
 	var file=getParameterByName('file');
 	var about = document.getElementById('about');
@@ -52,7 +53,8 @@
 		nav_a.innerHTML = nav_left + '<div style="clear:both;"></div>';
 		nav_b.innerHTML = nav_left ;
 	}else{
-		readTextFile("README.md");
+		readTextFile(INDEX_MD);
+		var edit_link = ' <a href="'+REPO_LINK+'/edit/master/'+INDEX_MD+'" style="float:left;margin-left: 10px;"><h4> Edit </h4></a>';
 		
 		about.innerHTML = '<a href="http://github.com/kyshel/'+ lastSegment +'" style="float:left;"><h4>This Repo</h4></a>';
 		about.innerHTML += '<a href="http://kyshel.me" class="about_link" style="float:right;"><h4>Blog</h4>';
