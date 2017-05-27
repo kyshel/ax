@@ -1,5 +1,5 @@
 # AX
 
-- [js.md](./?js.md)
+- [js.md](./?f=js.md)
 
 
