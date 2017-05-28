@@ -2,5 +2,5 @@
 
 - [js.md](./?f=js.md)
 - [flash.md](./?f=flash.md)
-- [lsit.md](./?f=list.md)
+- [list.md](./?f=list.md)
 
