@@ -1,1 +1,2 @@
 - there R so many things that I can express only by en.
+- one img say a thousand words.
