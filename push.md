@@ -1,0 +1,1 @@
+- fully blog from scratch
