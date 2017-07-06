@@ -1,5 +1,5 @@
 
-
+- exploit words by many sites, like eudic, dictionary
 - local wifi file hub
 - fully js dip
 - ojm(object json map)
