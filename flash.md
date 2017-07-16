@@ -1,4 +1,5 @@
 
+- 170716 pic add watermark auto, use opencv or pillow
 - exploit words by many sites, like eudic, dictionary
 - local wifi file hub
 - fully js dip
