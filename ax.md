@@ -12,4 +12,5 @@
 ---
 
 - [config_deploy](http://kyshel.me/config/)
+- [repo_config](https://github.com/kyshel/config)
 
