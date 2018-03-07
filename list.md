@@ -1,4 +1,6 @@
 
+- an auto deploy bash script
+
 
 
 - [opencv TAG SYNC](https://github.com/opencv/opencv_contrib/issues/1100)
